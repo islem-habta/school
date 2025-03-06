@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+School Dashboard (Next.js Project)
+This is a Next.js project bootstrapped with create-next-app.
 
-## Getting Started
+🚀 Features
+✅ Authentication with Google OAuth
+✅ Admin Dashboard
+✅ Secure API Routes
+✅ MongoDB Database (Prisma ORM)
+✅ Stripe Payments
 
-First, run the development server:
+📥 Installation
+Clone the repository:
 
-```bash
+bash
+Copier
+Modifier
+git clone https://github.com/islem-habta/school.git
+cd school
+Install dependencies:
+
+bash
+Copier
+Modifier
+npm install
+# or
+yarn install
+# or
+pnpm install
+🛠️ Configuration
+Create a .env.local file in the root directory and add:
+
+env
+Copier
+Modifier
+NODE_ENV=development
+PORT=3000
+DATABASE_URL=your_database_url
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+STRIPE_SECRET_KEY=your_stripe_secret_key
+Note: Replace values with your actual credentials.
+
+🚀 Running the Project
+Start the development server:
+
+bash
+Copier
+Modifier
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🚀 Deployment on Vercel
+1️⃣ Push your code to GitHub:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+bash
+Copier
+Modifier
+git add .
+git commit -m "Updated project"
+git push origin main
+2️⃣ Go to Vercel Dashboard
+3️⃣ Select your project and redeploy
