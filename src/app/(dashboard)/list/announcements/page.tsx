@@ -8,7 +8,7 @@ import Image from "next/image";
 type Announcement = {
   id: number;
   title: string;
-  class: string;
+  className: string; // renamed from 'class' to 'className'
   date: string;
 };
 
@@ -19,7 +19,7 @@ const columns = [
   },
   {
     header: "Class",
-    accessor: "class",
+    accessor: "className", // updated accessor to 'className'
   },
   {
     header: "Date",
@@ -32,14 +32,14 @@ const columns = [
   },
 ];
 
-const AnnouncementListPage = () => {
+const AnnouncementList = () => {
   const renderRow = (item: Announcement) => (
     <tr
       key={item.id}
       className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight"
     >
       <td className="flex items-center gap-4 p-4">{item.title}</td>
-      <td>{item.class}</td>
+      <td>{item.className}</td> {/* updated to 'className' */}
       <td className="hidden md:table-cell">{item.date}</td>
       <td>
         <div className="flex items-center gap-2">
@@ -64,11 +64,17 @@ const AnnouncementListPage = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-              <Image src="/filter.png" alt="" width={14} height={14} />
+            <button
+              type="button" // added 'type="button"' for clarity
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow"
+            >
+              <Image src="/filter.png" alt="Filter icon" width={14} height={14} /> {/* meaningful alt text */}
             </button>
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-              <Image src="/sort.png" alt="" width={14} height={14} />
+            <button
+              type="button" // added 'type="button"' for clarity
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow"
+            >
+              <Image src="/sort.png" alt="Sort icon" width={14} height={14} /> {/* meaningful alt text */}
             </button>
             {role === "admin" && (
               <FormModal table="announcement" type="create" />
@@ -84,4 +90,4 @@ const AnnouncementListPage = () => {
   );
 };
 
-export default AnnouncementListPage;
+export default AnnouncementList;
